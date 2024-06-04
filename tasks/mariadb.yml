@@ -48,5 +48,3 @@
     enabled: yes
   register: mariadb_service_result
   ignore_errors: yes
-
-

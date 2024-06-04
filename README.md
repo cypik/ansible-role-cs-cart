@@ -1,12 +1,31 @@
-Role Name
-cs-cart role
 
-A brief description of the role goes here.
 
-Requirements
-php7.4-fpm all extensions , nginx and database(mariadb) 
+<p align="center"> <img src="https://user-images.githubusercontent.com/50652676/62451340-ba925480-b78b-11e9-99f0-13a8a9cc0afa.png" width="100" height="100"></p>
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+<h1 align="center">
+    Ansible Role Cs-Cart
+</h1>
+
+
+
+<p align="center">
+
+
+
+
+</p>
+<p align="center">
+
+
+
+</p>
+<hr>
+
+
+
+We eat, drink, sleep and most importantly love **DevOps**. DevOps always promotes automation and standardisation. While setting up various environments like local, dev, testing, production, etc. it is critical to maintain the same environment across. This can easily be achieved using automating the environment setup & installation with the help of ansible-playbooks.
+
+Smaller roles are created for each environment elements; which also include tasks & tests. These roles can then be grouped together in [ansible-playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html) to achieve the desired yet consistent results.
 
 Role Variables
 --------------

@@ -27,4 +27,3 @@
 # task file for cs-cart
 - import_tasks: php7.4-fpm.yml
 - import_tasks: mariadb.yml
-
