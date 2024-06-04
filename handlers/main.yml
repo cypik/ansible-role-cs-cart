@@ -1,0 +1,25 @@
+---
+# handlers for ansible-role-nginx
+############################# Nginx ######################
+
+- name: Restart Nginx Service
+  service:
+    name: nginx
+    state: restarted
+
+
+############################# php7.4-fpm ######################
+
+- name: Restart PHP
+  service:
+    name: php7.4-fpm
+    state: restarted
+
+
+############################# MariaDB ######################
+
+- name: Restart MariaDB Service
+  service:
+    name: mysql
+    state: restarted
+

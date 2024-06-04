@@ -1,0 +1,52 @@
+---
+# mysql file for cs-cart
+
+- name: Update apt package cache
+  apt:
+    update_cache: yes
+
+- name: Install Python 3 and Pip 3
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python3
+    - python3-pip
+
+- name: Install MySQL client library for Python 3
+  apt:
+    name: python3-mysql.connector
+    state: present
+
+# If you want to use pymysql instead, you can install it using pip
+- name: Install PyMySQL using Pip3
+  pip:
+    name: pymysql
+    executable: pip3
+    state: present
+
+- name: Update apt packages
+  apt:
+    update_cache: yes
+
+- name: Install MariaDB server
+  apt:
+    name: mariadb-server
+    state: present
+
+- name: Copy MariaDB configuration file
+  template:
+    src: my.cnf.j2
+    dest: /etc/mysql/my.cnf
+  notify:
+    - Restart MariaDB Service
+
+- name: Ensure MariaDB service is started and enabled
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+  register: mariadb_service_result
+  ignore_errors: yes
+
+

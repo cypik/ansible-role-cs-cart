@@ -1,0 +1,22 @@
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 768;
+    # multi_accept on;
+}
+
+http {
+    server {
+        listen 80;
+        server_name {{ ansible_fqdn }};
+        root /var/www/html;
+
+        location / {
+            index index.html;
+        }
+    }
+
+    # Additional server blocks can be added here if needed.
+}
